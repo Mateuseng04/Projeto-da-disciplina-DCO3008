@@ -21,9 +21,9 @@ som = wv.read('sound_01.wav')
 
 
 #salvando o tom gerado em um arquivo de extensão .wav :
-wv.write('C:/Users/mateu/OneDrive/Documents/Projetos em Python/Projeto-da-disciplina-DCO3008/tom_gerado.wav',fs,y)
+wv.write('C:/Users/mateu/OneDrive/Documents/Projetos_em_Python/Projeto-da-disciplina-DCO3008/tom_gerado.wav',fs,y)
 #reproduzindo o arquivo
 
-os.system('cvlc --play-and-exit C:/Users/mateu/OneDrive/Documents/Projetos em Python/Projeto-da-disciplina-DCO3008/tom_gerado.wav') 
+os.system('cvlc --play-and-exit C:/Users/mateu/OneDrive/Documents/Projetos_em_Python/Projeto-da-disciplina-DCO3008/tom_gerado.wav') 
 #vlc chama o programa VLC Audio Player
 #'c' serve para que nenhuma interface seja aberta
