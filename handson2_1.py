@@ -1,29 +1,45 @@
-import numpy as np           #importando as bibliotecas necessárias:
-import matplotlib.pyplot as plt 
-import scipy.io.wavfile as wv 
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy.io.wavfile as wv
 import os
 
-                             # Parâmetros da onda:
+# ------------------------------
+# Parâmetros da onda
+# ------------------------------
 tf = 1                       # Tempo de duração da nota
 fc = 512                     # Frequência da nota Dó
-fs = 100*fc                  # Frequencia de amostragem da nota. 
-t =np.arange(0,tf+1/fs,1/fs) # Vetor tempo. Para cada elemento do vetor t, haverá um elemento em y correspondente.
+fs = 100 * fc                # Frequência de amostragem
+t = np.arange(0, tf+1/fs, 1/fs)  # Vetor tempo
 A = 1                        # Amplitude do sinal
-y=A*np.cos(2*np.pi*fc*t)     # Sinal senoidal
+y = A * np.cos(2 * np.pi * fc * t)  # Sinal senoidal
 
-plt.figure(1,figsize=[10,7]) # cria instância da figura para poder alterar seu tamanho
-plt.plot(t,y)                # Visualizar o sinal gerado  
-plt.axis([0,0.02,-2,2])      # Zoom para melhor visualização  
-plt.show() 
+# ------------------------------
+# Plot do sinal
+# ------------------------------
+plt.figure(1, figsize=[10, 7])
+plt.plot(t, y)
+plt.axis([0, 0.02, -2, 2])   # Zoom para melhor visualização
+plt.title("Sinal gerado")
+plt.show()
 
-#importando e armazenando o arquivo de áudio numa variável
-som = wv.read('sound_01.wav')   
+# ------------------------------
+# Conversão para int16 (necessário para WAV)
+# ------------------------------
+y_int16 = np.int16(y / np.max(np.abs(y)) * 32767)
 
+# ------------------------------
+# Caminho do arquivo
+# ------------------------------
+saida = r"C:\Users\mateu\OneDrive\Documents\Projetos_em _Python\Projeto-da-disciplina-DCO3008\tom_gerado.wav"
 
-#salvando o tom gerado em um arquivo de extensão .wav :
-wv.write('C:/Users/mateu/OneDrive/Documents/Projetos_em_Python/Projeto-da-disciplina-DCO3008/tom_gerado.wav',fs,y)
-#reproduzindo o arquivo
+# ------------------------------
+# Salvando o .wav
+# ------------------------------
+wv.write(saida, fs, y_int16)
+print(f"Arquivo .wav criado em: {saida}")
 
-os.system('cvlc --play-and-exit C:/Users/mateu/OneDrive/Documents/Projetos_em_Python/Projeto-da-disciplina-DCO3008/tom_gerado.wav') 
-#vlc chama o programa VLC Audio Player
-#'c' serve para que nenhuma interface seja aberta
+# ------------------------------
+# Reproduzindo o arquivo (opcional)
+# ------------------------------
+# Teste VLC no Windows: normalmente o comando é "vlc" e não "cvlc"
+os.system(f'vlc --play-and-exit "{saida}"')
