@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import scipy.io.wavfile as wv
 import os
+import vlc
 
 # ------------------------------
 # Parâmetros da onda
@@ -43,3 +44,5 @@ print(f"Arquivo .wav criado em: {saida}")
 # ------------------------------
 # Teste VLC no Windows: normalmente o comando é "vlc" e não "cvlc"
 os.system(f'vlc --play-and-exit "{saida}"')
+player = vlc.MediaPlayer('{saida}')
+player.play()
