@@ -2,8 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import scipy.io.wavfile as wv
 import os
-import vlc
-
+ 
 # ------------------------------
 # Parâmetros da onda
 # ------------------------------
@@ -31,7 +30,7 @@ y_int16 = np.int16(y / np.max(np.abs(y)) * 32767)
 # ------------------------------
 # Caminho do arquivo
 # ------------------------------
-saida = r"C:\Users\mateu\OneDrive\Documents\Projetos_em _Python\Projeto-da-disciplina-DCO3008\tom_gerado.wav"
+saida = r"C:\Users\mateu\OneDrive\Documents\Projetos_em _Python\Projeto-da-disciplina-DCO3008\output.wav"
 
 # ------------------------------
 # Salvando o .wav
@@ -44,5 +43,3 @@ print(f"Arquivo .wav criado em: {saida}")
 # ------------------------------
 # Teste VLC no Windows: normalmente o comando é "vlc" e não "cvlc"
 os.system(f'vlc --play-and-exit "{saida}"')
-player = vlc.MediaPlayer('{saida}')
-player.play()
