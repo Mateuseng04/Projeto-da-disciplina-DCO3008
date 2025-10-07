@@ -92,7 +92,14 @@ Em seguida, definimos o local do arquivo em questão e as variáveis estimadas
     def estimar_senoides_mat(caminho_mat, limiar_relativo=0.1, plot=True):
 A partir deste ponto, utilizaremos as ferramentas fornecidas pelas bibliotecas para ler o arquivo, estimar os picos, aplicar a Transformada Discreta e plotar os resultados
 
-A base deste projeto é a **Transformada Discreta de Fourrier - DFT**, que converte uma onda no domínio da frequência para o domínio do tempo, através da seguinte equação:
+A base deste projeto é a **Transformada Discreta de Fourrier - DFT**, que converte uma onda no domínio da frequência para o domínio do tempo, através da equação da transformada.
 
+Para rodar este _script_, basta alterar o local que o arquivo está armazenado e apertar executar. Ao fazê-lo, ele gera um gráfico contendo os picos identificados e imprime uma lista das frequências e fases estimadas.
 
-$$ X[k] = \\sum_{n=0}^{N-1} x[n] \\cdot  e^{-j \\left( \\frac{2\\pi}{N}\\right)k \\cdot n}$$
+    Componentes senoidais detectadas:
+  Senoide 1: f = 10000.0 Hz, fase = 0.500 rad
+  Senoide 2: f = 60000.0 Hz, fase = -0.800 rad
+  Senoide 3: f = 30000.0 Hz, fase = -0.300 rad
+  Senoide 4: f = 40000.0 Hz, fase = 2.400 rad
+
+  
