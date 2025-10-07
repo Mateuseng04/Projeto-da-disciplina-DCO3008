@@ -94,6 +94,5 @@ A partir deste ponto, utilizaremos as ferramentas fornecidas pelas bibliotecas p
 
 A base deste projeto é a **Transformada Discreta de Fourrier - DFT**, que converte uma onda no domínio da frequência para o domínio do tempo, através da seguinte equação:
 
-        \[
-        X[k] = \sum_{n=0}^{N-1} x[n] \, e^{-j \frac{2\pi}{N}kn}
-        \]
+
+$$ X[k] = \\sum_{n=0}^{N-1} x[n] \\cdot  e^{-j \\left( \\frac{2\\pi}{N}\\right)k \\cdot n}$$
