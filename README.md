@@ -97,9 +97,9 @@ A base deste projeto é a **Transformada Discreta de Fourrier - DFT**, que conve
 Para rodar este _script_, basta alterar o local que o arquivo está armazenado e apertar executar. Ao fazê-lo, ele gera um gráfico contendo os picos identificados e imprime uma lista das frequências e fases estimadas.
 
     Componentes senoidais detectadas:
-  Senoide 1: f = 10000.0 Hz, fase = 0.500 rad
-  Senoide 2: f = 60000.0 Hz, fase = -0.800 rad
-  Senoide 3: f = 30000.0 Hz, fase = -0.300 rad
-  Senoide 4: f = 40000.0 Hz, fase = 2.400 rad
+    Senoide 1: f = 10000.0 Hz, fase = 0.500 rad
+    Senoide 2: f = 60000.0 Hz, fase = -0.800 rad
+    Senoide 3: f = 30000.0 Hz, fase = -0.300 rad
+    Senoide 4: f = 40000.0 Hz, fase = 2.400 rad
 
   
