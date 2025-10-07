@@ -42,4 +42,4 @@ print(f"Arquivo .wav criado em: {saida}")
 # Reproduzindo o arquivo (opcional)
 # ------------------------------
 # Teste VLC no Windows: normalmente o comando é "vlc" e não "cvlc"
-os.system(f'vlc --play-and-exit "{saida}"')
+os.system(f'vlc --play "{saida}"')
